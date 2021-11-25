@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User Registrer</title>
+<link href="/css/add.css" rel="stylesheet"></link>
+<meta charset="utf-8" />
+</head>
+<body>
+    <h1>User Register</h1>
+    <form th:action="@{/user/create}" th:object="${userRequest}"
+        method="post">
+        <table>
+            <tr>
+                <th class="cell_title">Name</th>
+                <th class="cell_required">※</th>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <th class="cell_title">Address</th>
+                <th class="cell_required">*</th>
+                <td><input type="text" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <th class="cell_title">Phone number</th>
+                <th class="cell_required"></th>
+                <td><input type="text" th:field="*{phone}"></td>
+            </tr>
+        </table>
+        <div class="btn_area_center">
+            <input type="submit" value="register" class="btn">
+        </div>
+    </form>
+</body>
+</html>
