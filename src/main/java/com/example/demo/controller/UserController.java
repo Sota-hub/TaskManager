@@ -19,6 +19,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @RequestMapping("/")
+    public String displayHome() {
+    	return "user/home";
+    }
+    
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
     public String displayList(Model model) {
         List<User> userlist = userService.searchAll();
