@@ -7,36 +7,63 @@
 <meta charset="utf-8" />
 </head>
 <body>
-    <h1>User Information List</h1>
-    <div>
-        <a th:href="@{/user/add}">Register here</a>
+  <header class="site-header">
+    <div class="wrapper site-header__wrapper">
+      <img class="logo" src="/images/Online Working Tree-logos.jpeg" >
+      <nav class="nav">
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/">HOME</a></li>
+          <li class="nav__item"><a href="/user/add">ADD TO DO</a></li>
+          <li class="nav__item"><a href="/user/list">SEE TO DO</a></li>
+        </ul>
+      </nav>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone number</th>
-                <th>Update date</th>
-                <th>Register date</th>
-                <th>Delete date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="user : ${userlist}" th:object="${user}">
-                <td class="center" th:text="*{id}"></td>
-                <td th:text="*{name}"></td>
-                <td th:text="*{address}"></td>
-                <td class="center" th:text="*{phone}"></td>
-                <td class="center"
-                    th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></td>
-                <td class="center"
-                    th:text="${#dates.format(user.createDate, 'yyyy/MM/dd')}"></td>
-                <td class="center"
-                    th:text="${#dates.format(user.deleteDate, 'yyyy/MM/dd')}"></td>
-            </tr>
-        </tbody>
-    </table>
+  </header>
+
+  <main class="align_center">
+    <div>
+      <h1 class="text-style">User Information List</h1>
+      <div class="table-wrapper ">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone number</th>
+                    <th>Update date</th>
+                    <th>Register date</th>
+                    <th>Delete date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${userlist}" th:object="${user}">
+                    <td class="center" th:text="*{id}"></td>
+                    <td th:text="*{name}"></td>
+                    <td th:text="*{address}"></td>
+                    <td class="center" th:text="*{phone}"></td>
+                    <td class="center"
+                        th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></td>
+                    <td class="center"
+                        th:text="${#dates.format(user.createDate, 'yyyy/MM/dd')}"></td>
+                    <td class="center"
+                        th:text="${#dates.format(user.deleteDate, 'yyyy/MM/dd')}"></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+    <footer>
+      <div class="footer">
+        <div class="sentence">
+          <p class="SenP">Organization is better than river of ideas!</p>
+        </div>
+        <div class="credits">
+          <p class="cred1">Made by Sohta, Sota, Juan, Shouki, Kyoko.</p>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
