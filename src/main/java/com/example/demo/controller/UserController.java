@@ -37,9 +37,9 @@ public class UserController {
         return "user/add";
     }
 
-    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
-    public String create(@ModelAttribute UserRequest userRequest, Model model) {
-        userService.create(userRequest);
-        return "redirect:/user/list";
-    }
+//    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
+//    public String create(@ModelAttribute UserRequest userRequest, Model model) {
+//        userService.create(userRequest);
+//        return "redirect:/user/list";
+//    }
 }
